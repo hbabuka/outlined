@@ -14,6 +14,7 @@ const FaqSection = () => {
             <Accordion
               question={question.question}
               answers={question.answers}
+              key={question.id}
             />
           );
         })}

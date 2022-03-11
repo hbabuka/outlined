@@ -5,8 +5,8 @@ export const Accordion = ({ question, answers }) => {
     <div className="question">
       <h4>{question}</h4>
       <div className="answer">
-        {answers.map((answer) => {
-          return <p>{answer}</p>;
+        {Object.keys(answers).map((item, i) => {
+          return <p key={i}>{answers[item]}</p>;
         })}
       </div>
     </div>
