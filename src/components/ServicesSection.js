@@ -17,6 +17,7 @@ const ServicesSection = () => {
                 imageSource={card.icon}
                 title={card.title}
                 description={card.description}
+                key={card.id}
               />
             );
           })}
