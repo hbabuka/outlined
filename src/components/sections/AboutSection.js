@@ -1,6 +1,5 @@
 import React from "react";
 import home1 from "../../images/home1.png";
-import styled from "styled-components";
 import { Shared } from "../../styles/shared";
 
 const AboutSection = () => {
