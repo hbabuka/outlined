@@ -1,24 +1,25 @@
 import React from "react";
 import home1 from "../../images/home1.png";
 import { Shared } from "../../styles/shared";
+import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
     <Shared.Section.Wrapper>
       <Shared.Section.Description>
-        <div className="title">
+        <motion.div>
           <Shared.Section.Hide>
-            <h2>We work to make</h2>
+            <motion.h2>We work to make</motion.h2>
           </Shared.Section.Hide>
           <Shared.Section.Hide>
-            <h2>
+            <motion.h2>
               your <span>dreams</span> come
-            </h2>
+            </motion.h2>
           </Shared.Section.Hide>
           <Shared.Section.Hide>
-            <h2>true</h2>
+            <motion.h2>true</motion.h2>
           </Shared.Section.Hide>
-        </div>
+        </motion.div>
         <p>
           Contact us for any photography or videography ideas that you have. We
           have professionals with amazing skills.

@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Movie } from "../components/shared/Movie";
 import { moviesData } from "../data";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
@@ -14,7 +16,13 @@ const Work = styled.div`
 
 const OurWork = () => {
   return (
-    <Work>
+    <Work
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      style={{ backgroundColor: "#fff" }}
+    >
       {moviesData.map((movie) => {
         return (
           <Movie
