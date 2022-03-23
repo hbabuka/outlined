@@ -3,6 +3,7 @@ import home1 from "../../images/home1.png";
 import { Shared } from "../../styles/shared";
 import { motion } from "framer-motion";
 import { titleAnimation, fade, photoAnimation } from "../../animation";
+import Wave from "../Wave";
 
 const AboutSection = () => {
   return (
@@ -34,6 +35,7 @@ const AboutSection = () => {
           variants={photoAnimation}
         />
       </Shared.Section.Image>
+      <Wave />
     </Shared.Section.Wrapper>
   );
 };
