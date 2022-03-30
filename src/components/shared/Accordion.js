@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Toggle } from "../Toggle";
 
 const DivStyled = styled.div`
   padding: 3rem 0;
@@ -20,14 +21,16 @@ const DivStyled = styled.div`
 
 export const Accordion = ({ question, answers }) => {
   return (
-    <DivStyled className="question">
-      <h4>{question}</h4>
-      <div className="answer">
-        {Object.keys(answers).map((answer, i) => {
-          return <p key={i}>{answers[answer]}</p>;
-        })}
-      </div>
-      <div className="faq-line"></div>
-    </DivStyled>
+    <Toggle>
+      <DivStyled className="question">
+        <h4>{question}</h4>
+        <div className="answer">
+          {Object.keys(answers).map((answer, i) => {
+            return <p key={i}>{answers[answer]}</p>;
+          })}
+        </div>
+        <div className="faq-line"></div>
+      </DivStyled>
+    </Toggle>
   );
 };

@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {
-  pageAnimation,
-  fade,
-  photoAnimation,
-  lineAnimation,
-} from "../../animation";
+import { fade, photoAnimation, lineAnimation } from "../../animation";
 import { motion } from "framer-motion";
 
 const DivStyled = styled.div`
