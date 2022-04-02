@@ -3,6 +3,7 @@ import { Accordion } from "../shared/Accordion";
 import { questions } from "../../data";
 import { Shared } from "../../styles/shared";
 import styled from "styled-components";
+import { AnimateSharedLayout } from "framer-motion";
 
 const FaqStyled = styled(Shared.Section.Wrapper)`
   display: block;
@@ -21,7 +22,7 @@ const FaqSection = () => {
       <h2>
         Any Questions? <span>FAQ</span>
       </h2>
-      <div>
+      <AnimateSharedLayout>
         {questions.map((question) => {
           return (
             <Accordion
@@ -31,7 +32,7 @@ const FaqSection = () => {
             />
           );
         })}
-      </div>
+      </AnimateSharedLayout>
     </FaqStyled>
   );
 };

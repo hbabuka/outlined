@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Toggle } from "../Toggle";
+import { motion } from "framer-motion";
 
-const DivStyled = styled.div`
-  padding: 3rem 0;
-  cursor: pointer;
+const DivStyled = styled(motion.div)`
+  padding: 3rem 0 0;
+  h4 {
+    cursor: pointer;
+  }
   .faq-line {
     background-color: #cccccc;
     height: 0.2rem;
@@ -20,17 +22,19 @@ const DivStyled = styled.div`
 `;
 
 export const Accordion = ({ question, answers }) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <Toggle>
-      <DivStyled className="question">
-        <h4>{question}</h4>
-        <div className="answer">
+    <DivStyled Layout className="question">
+      <motion.h4 onClick={() => setIsActive(!isActive)}>{question}</motion.h4>
+      {isActive && (
+        <motion.div className="answer">
           {Object.keys(answers).map((answer, i) => {
             return <p key={i}>{answers[answer]}</p>;
           })}
-        </div>
-        <div className="faq-line"></div>
-      </DivStyled>
-    </Toggle>
+        </motion.div>
+      )}
+      <div className="faq-line"></div>
+    </DivStyled>
   );
 };
