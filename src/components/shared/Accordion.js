@@ -25,7 +25,7 @@ export const Accordion = ({ question, answers }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <DivStyled Layout className="question">
+    <DivStyled layout className="question">
       <motion.h4 onClick={() => setIsActive(!isActive)}>{question}</motion.h4>
       {isActive && (
         <motion.div className="answer">

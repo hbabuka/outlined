@@ -36,7 +36,7 @@ const ContactUs = () => {
         </Hide>
       </TitleStyled>
       {labelsData.map((item) => {
-        return <Social label={item} />;
+        return <Social label={item} key={item} />;
       })}
     </ContactStyled>
   );
