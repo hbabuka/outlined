@@ -4,6 +4,7 @@ import { Movie } from "../components/shared/Movie";
 import { moviesData } from "../data";
 import { motion } from "framer-motion";
 import { pageAnimation, slider, sliderContainer } from "../animation";
+import ScrollToTop from "../components/shared/ScrollToTop";
 
 const Work = styled(motion.div)`
   min-height: 100vh;
@@ -51,6 +52,7 @@ const OurWork = () => {
           />
         );
       })}
+      <ScrollToTop />
     </Work>
   );
 };
