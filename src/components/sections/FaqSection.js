@@ -4,6 +4,8 @@ import { questions } from "../../data";
 import { Shared } from "../../styles/shared";
 import styled from "styled-components";
 import { AnimateSharedLayout } from "framer-motion";
+import { useScroll } from "../shared/useScroll";
+import { scrollReveal } from "../../animation";
 
 const FaqStyled = styled(Shared.Section.Wrapper)`
   display: block;
@@ -17,8 +19,15 @@ const FaqStyled = styled(Shared.Section.Wrapper)`
 `;
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <FaqStyled>
+    <FaqStyled
+      variants={scrollReveal}
+      animate={controls}
+      ref={element}
+      initial="hidden"
+    >
       <h2>
         Any Questions? <span>FAQ</span>
       </h2>

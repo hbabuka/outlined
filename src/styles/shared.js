@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const WrapperStyled = styled.div`
+const WrapperStyled = styled(motion.div)`
   min-height: 90vh;
   display: flex;
   align-items: center;

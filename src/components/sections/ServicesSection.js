@@ -4,6 +4,8 @@ import home2 from "../../images/home2.png";
 import { cardDetails } from "../../data";
 import { Shared } from "../../styles/shared";
 import styled from "styled-components";
+import { useScroll } from "../shared/useScroll";
+import { scrollReveal } from "../../animation";
 
 const ServicesStyled = styled(Shared.Section.Wrapper)`
   h2 {
@@ -21,8 +23,14 @@ const CardsStyled = styled.div`
 `;
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <ServicesStyled>
+    <ServicesStyled
+      variants={scrollReveal}
+      animate={controls}
+      ref={element}
+      initial="hidden"
+    >
       <Shared.Section.Description>
         <h2>
           High <span>quality</span> services
